@@ -19,8 +19,7 @@ jobs:
 
       - run:
           name: notify build is finished
-          command: echo "The build is finished!"
-          
+          command: echo "The build is finished!"          
   testlinks:
     executor: ci-executor
     steps:
@@ -47,11 +46,12 @@ jobs:
           command: echo "The test is completed!"
 
 workflows:
+  
   version: 2.1
-
   build_and_test:
     jobs:
       - build
       - testlinks:
           requires:
             - build
+
